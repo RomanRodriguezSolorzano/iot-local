@@ -1,0 +1,27 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+    Registro
+{% endblock %}
+
+{% set navigation = 'no_logged_in' %}
+
+{% block content %}
+    
+    <form action="/registro" method="post">
+        <label>Nombre:</label>
+        <input type="text" name="nombre">
+
+        <label>Tipo de usuario:</label>
+        <input type="text" name="tipo">
+        
+        <label>Contraseña:</label>
+        <input type="password" name="clave">
+
+        <button class="btn btn-primary" type="submit">Registrar</button>
+    </form>
+
+    {% if errorMessage is defined %}
+        <strong>{{ errorMessage }}</strong>
+    {% endif %}
+{% endblock %}

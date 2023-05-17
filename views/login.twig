@@ -1,0 +1,27 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+	Login
+{% endblock %}
+
+{% set navigation = 'no_logged_in' %}
+
+{% block content %}
+	{% if errorMessage is defined %}
+		<strong>{{ errorMessage }}</strong>
+	{% endif %}
+	<form class="row g-3 w-50 mx-auto" method="POST">
+		<div class="col">
+			<label for="nombre">Nombre</label>
+			<input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre">
+		</div>
+		<div class="col">
+			<label for="clave">Contraseña</label>
+			<input type="password" class="form-control" id="clave" placeholder="Contraseña" name="clave">
+		</div>
+		<div class="row g-3">
+			<button type="submit" class="btn btn-primary mb-3">Iniciar Sesión</button>
+		</div>    
+
+	</form>
+{% endblock %}

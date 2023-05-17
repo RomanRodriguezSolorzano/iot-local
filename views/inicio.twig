@@ -1,0 +1,14 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+    Inicio
+{% endblock %}
+
+{% set navigation = 'no_logged_in' %}
+
+{% block content %}
+  {% if IotMessage is defined %}
+        <strong>{{ IotMessage }}</strong>
+  {% endif %}
+  <h1> Sistema de IoT's </h1>
+{% endblock %}
